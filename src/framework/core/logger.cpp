@@ -34,14 +34,12 @@
 
 Logger g_logger;
 
-void Logger::log(Fw::LogLevel level, const std::string& message)
+void Logger::log(Fw::LogLevel level, const std::string& message, const std::string& section)
 {
     std::lock_guard<std::recursive_mutex> lock(m_mutex);
 
-#ifdef NDEBUG
-    if(level == Fw::LogDebug)
+    if(level == Fw::LogDebug && !g_config.checkLogSection(section))
         return;
-#endif
 
     static bool ignoreLogs = false;
     if(ignoreLogs)

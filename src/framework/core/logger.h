@@ -45,14 +45,14 @@ class Logger
     typedef std::function<void(Fw::LogLevel, const std::string&, int64)> OnLogCallback;
 
 public:
-    void log(Fw::LogLevel level, const std::string& message);
+    void log(Fw::LogLevel level, const std::string& message, const std::string& section="none");
     void logFunc(Fw::LogLevel level, const std::string& message, std::string prettyFunction);
 
-    void debug(const std::string& what) { log(Fw::LogDebug, what); }
-    void info(const std::string& what) { log(Fw::LogInfo, what); }
-    void warning(const std::string& what) { log(Fw::LogWarning, what); }
-    void error(const std::string& what) { log(Fw::LogError, what); }
-    void fatal(const std::string& what) { log(Fw::LogFatal, what); }
+    void debug(const std::string& what, const std::string& section="none") { log(Fw::LogDebug, what); }
+    void info(const std::string& what, const std::string& section="none") { log(Fw::LogInfo, what); }
+    void warning(const std::string& what, const std::string& section="none") { log(Fw::LogWarning, what); }
+    void error(const std::string& what, const std::string& section="none") { log(Fw::LogError, what); }
+    void fatal(const std::string& what, const std::string& section="none") { log(Fw::LogFatal, what); }
 
     void fireOldMessages();
     void setLogFile(const std::string& file);

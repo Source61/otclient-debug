@@ -17,6 +17,8 @@ set(framework_LIBRARIES "")
 set(framework_DEFINITIONS "")
 set(framework_INCLUDE_DIRS "${CMAKE_CURRENT_LIST_DIR}/..")
 set(framework_SOURCES ${framework_SOURCES}
+    ${CMAKE_CURRENT_LIST_DIR}/../myconfig.h
+    ${CMAKE_CURRENT_LIST_DIR}/../myconfig.cpp
     ${CMAKE_CURRENT_LIST_DIR}/const.h
     ${CMAKE_CURRENT_LIST_DIR}/global.h
     ${CMAKE_CURRENT_LIST_DIR}/pch.h

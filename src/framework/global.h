@@ -44,4 +44,7 @@
 // logger
 #include "core/logger.h"
 
+// custom
+#include <myconfig.h>
+
 #endif
